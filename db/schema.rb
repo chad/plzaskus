@@ -9,7 +9,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20080922172907) do
+ActiveRecord::Schema.define(:version => 20081022220714) do
+
+  create_table "answers", :force => true do |t|
+    t.integer  "question_id"
+    t.integer  "person_id"
+    t.text     "answer"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "people", :force => true do |t|
     t.string   "name",                        :limit => 100, :default => ""
@@ -22,6 +30,13 @@ ActiveRecord::Schema.define(:version => 20080922172907) do
     t.datetime "remember_token_expires_at"
     t.string   "password_reset_code"
     t.datetime "password_reset_code_expires"
+  end
+
+  create_table "questions", :force => true do |t|
+    t.string   "question"
+    t.date     "publish_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

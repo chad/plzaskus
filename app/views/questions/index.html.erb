@@ -1,0 +1,6 @@
+<h1><%= @question.question %></h1>
+<% form_for @answer do |f| %>
+<%= f.text_area :answer, :rows => 5 %>
+<%= f.hidden_field :question_id %>
+<%= submit_tag "Answer" %>
+<% end %>

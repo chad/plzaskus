@@ -13,5 +13,7 @@ ActionController::Routing::Routes.draw do |map|
   map.connect '/account', :controller => 'accounts', :action => 'edit'
   
   map.resources :people
+  map.resources :questions
+  map.resources :answers
   map.resource  :session, :account
 end
